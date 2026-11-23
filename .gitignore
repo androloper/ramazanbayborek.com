@@ -1,0 +1,3 @@
+# Keep all project files eligible for version control, including vendor assets.
+# Override matching global ignore rules for this repository.
+!*

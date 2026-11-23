@@ -1,7 +1,7 @@
 /*
 Name: 			One Page Agency
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	9.7.0
+Theme Version:	9.2.0
 */
 
 (function( $ ) {
@@ -9,19 +9,6 @@ Theme Version:	9.7.0
 	'use strict';
 
 	var $window = $(window);
-
-	/*
-	* Header
-	*/
-	var $header = $('#header');
-
-	window.onscroll = function() {
-		if (window.pageYOffset > $header.offset().top) {
-			$('html').addClass('sticky-header-active');
-		} else {
-			$('html').removeClass('sticky-header-active');
-		}
-	};
 
 	/*
 	* Collapse Menu Button

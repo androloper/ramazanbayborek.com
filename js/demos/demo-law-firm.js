@@ -1,7 +1,7 @@
 /*
 Name: 			Law Firm
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	9.7.0
+Theme Version:	9.2.0
 */
 
 (function( $ ) {

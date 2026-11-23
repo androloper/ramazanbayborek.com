@@ -1,7 +1,7 @@
 /*
 Name: 			Portfolio - Examples
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	9.7.0
+Theme Version:	9.2.0
 */
 (function($) {
 
@@ -698,64 +698,6 @@ Theme Version:	9.7.0
 				}
 
 			}, 1000);
-
-		});
-
-	}
-
-	/*
-	Lazy Load Masonry
-	*/
-	if($('#portfolioLazyLoadMasonry').get(0)) {
-
-		var $window = $(window);
-
-		$window.on('load', function() {
-
-			var $grid = $('#portfolioLazyLoadMasonry .portfolio-list').isotope({
-				itemSelector: '.isotope-item',
-				layoutMode: 'masonry',
-				filter: '*',
-				hiddenStyle: {
-					opacity: 0
-				},
-				visibleStyle: {
-					opacity: 1
-				},
-				stagger: 30,
-				isOriginLeft: ($('html').attr('dir') == 'rtl' ? false : true)
-			});
-
-			var runningIsotope = false;
-
-			function reLayouIsotope() {
-
-				if(!runningIsotope) {
-
-					$grid.isotope('layout');
-					runningIsotope = true;
-
-					setTimeout(function() {
-						runningIsotope = false;
-					}, 1000);
-
-				}
-
-			}
-
-			$grid.isotope('on', 'layoutComplete', function () {
-				reLayouIsotope();
-			});
-
-			$window.on('scroll', function () {
-				reLayouIsotope();
-			});
-
-			$window.on('resize', function() {
-				setTimeout(function() {
-					reLayouIsotope();
-				}, 300);
-			});
 
 		});
 
