@@ -1,0 +1,154 @@
+/* Alternate portfolio palette and layout. */
+:root {
+    --ink: #17293b;
+    --navy: #122639;
+    --paper: #fbf8f0;
+    --wash: #edf2f5;
+    --line: #d7e1e8;
+    --gold: #f1c76e;
+    --muted: #435468;
+}
+body { background: var(--paper); color: var(--muted); }
+.main p { color: var(--muted); }
+.main .section { padding-block: clamp(42px, 5.3vw, 82px); }
+.main .section h2:not(.seo-original-h4) {
+    color: var(--ink) !important;
+    font-size: clamp(28px, 3.2vw, 42px);
+    line-height: 1.16;
+    letter-spacing: -.045em;
+    text-transform: none !important;
+    margin-bottom: 26px !important;
+}
+.main .section h2:not(.seo-original-h4)::before {
+    content: "";
+    display: block;
+    width: 34px;
+    height: 3px;
+    margin-bottom: 14px;
+    background: #ba7e23;
+}
+.main #about-me {
+    background: var(--navy) !important;
+    isolation: isolate;
+    margin: 0;
+    overflow: hidden !important;
+}
+#about-me .parallax-background { opacity: .23; }
+#about-me .row { align-items: center; }
+#about-me .custom-image-position-2 {
+    position: static;
+    display: block;
+    width: min(100%, 290px);
+    margin: 0 auto;
+    border: 1px solid #ffffff4f;
+    border-radius: 120px 120px 16px 16px;
+    box-shadow: 0 0 0 9px #ffffff16;
+}
+#about-me h1 {
+    color: var(--gold) !important;
+    font-size: clamp(35px, 5.2vw, 75px);
+    line-height: 1.05;
+    margin: 0;
+    letter-spacing: -.055em;
+}
+#about-me p, #about-me strong { color: #e0e9f1 !important; }
+#about-me p { font-size: clamp(16px, 1.8vw, 23px); line-height: 1.5; }
+#about-me .custom-about-me-infos .text-uppercase:not(strong) {
+    display: inline-block;
+    color: #fcf4de !important;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid #ffffff50;
+    border-radius: 30px;
+    padding: 4px 10px;
+    margin: 2px 4px 2px 0;
+}
+#about-me .custom-about-me-infos a.btn {
+    background: var(--gold);
+    color: var(--navy) !important;
+    border: 0;
+    margin: 3px 0;
+}
+.main .custom-about-me-links { background: var(--paper) !important; border-bottom: 1px solid var(--line); }
+.custom-about-me-links::after { display: none; }
+.custom-about-me-links .row { justify-content: center !important; }
+.custom-about-me-links a { display: block; }
+.custom-about-me-links .custom-nav-button { font-size: 15px; padding-block: 21px; }
+.custom-about-me-links .custom-nav-button i { color: #96631d !important; }
+.main #about-me ~ section { background: var(--paper) !important; }
+.main .custom-box-details {
+    background: #fff !important;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 23px;
+    box-shadow: none;
+    margin: 0 0 20px 28px;
+}
+.main #edu-skills, .main #portfolio { background: var(--wash) !important; }
+.main .custom-box-details-2 {
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    box-shadow: none;
+    padding: clamp(20px, 3vw, 36px);
+    height: calc(100% - 40px);
+}
+.main .custom-box-details,
+.main .custom-box-details-2 {
+    border-top: 3px solid #ba7e23;
+}
+.main .skill-tags span { background: white; color: var(--ink); border: 1px solid var(--line); }
+.main .skill-tags .primary { background: #f9e9c5; color: #493415; border-color: #e2c185; }
+.main #experience { background: var(--paper) !important; }
+#timeline .timeline-box { background: white; border-radius: 12px; box-shadow: 0 0 0 1px var(--line), 0 8px 24px #1226390c; }
+#timeline .timeline-box > .row { margin: 0; }
+#timeline .experience-info, #timeline .experience-description { padding: clamp(18px, 3vw, 37px); }
+#timeline .experience-info { background: #e8eff4 !important; border-radius: 12px 0 0 12px; overflow-wrap: anywhere; }
+#timeline .experience-description { border-radius: 0 12px 12px 0; }
+#timeline .timeline-bar { background: #a9bac8; width: 2px; }
+#timeline .timeline-box.right::before { box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px #a7803f !important; }
+#timeline .timeline-box.right::after { background: #bd8b3d; }
+#portfolio .custom-nav-sort.nav > li.active > a,
+#portfolio .custom-nav-sort.nav > li:hover > a { background: var(--navy); border-color: var(--navy); color: white; }
+#portfolio .thumb-info-wrapper { border-radius: 10px; }
+#portfolio .thumb-info-title { background: #122639e8; padding: 9px 12px; max-width: 96%; }
+.main #contact { background: #f4db9e !important; }
+.main #contact .custom-feature-box:hover .custom-feature-box-icon,
+.main #contact a:focus-visible .custom-feature-box-icon { background: #e2eaf0; }
+.main #contact .custom-feature-box-icon i { color: var(--navy) !important; }
+.main #contact .feature-box-info, .main #contact + .feature-box-info { overflow-wrap: anywhere; }
+.main section.preview-social { background: #e2eaf0 !important; }
+.main .preview-social .custom-feature-box-icon i { color: var(--navy) !important; }
+.main .custom-feature-box .feature-box-info { min-width: 0; flex: 1 1 auto; overflow-wrap: anywhere; }
+#footer .footer-copyright { background: var(--navy) !important; }
+#footer .footer-copyright p.custom-text-color-3 { color: #e0e9f1 !important; }
+#footer .footer-copyright a.custom-text-color-3 { color: var(--gold) !important; }
+#footer .footer-copyright a.custom-text-color-3:hover,
+#footer .footer-copyright a.custom-text-color-3:active,
+#footer .footer-copyright a.custom-text-color-3:focus-visible {
+    color: #0072ce !important;
+    background: #fff;
+    border-radius: 2px;
+}
+#footer .footer-copyright img {
+    max-height: 88px;
+    object-fit: contain;
+}
+a:focus-visible { outline: 2px solid #9e6d24; outline-offset: 4px; }
+@media (max-width: 991px) {
+    #about-me { text-align: center; }
+    #about-me .custom-image-position-2 { width: min(65%, 220px); margin: 0 auto 24px; }
+    #about-me .row > div { margin-bottom: 0; }
+    .custom-about-me-links .row > div:nth-child(odd) { border-right: 1px solid var(--line); }
+    .custom-about-me-links .row > div:nth-last-child(-n+2) { border-bottom: 0; }
+}
+@media (max-width: 575px) {
+    .main .custom-box-details { margin-left: 0; }
+    .main .skills-grid { grid-template-columns: 1fr; gap: 20px; }
+    .main #timeline .experience-description .ms-5 { margin-left: 1.5rem !important; }
+    #timeline .experience-info { border-radius: 12px 12px 0 0; }
+    #timeline .experience-description { border-radius: 0 0 12px 12px; }
+    .main .col-half-section.col-half-section-left { margin-left: 0 !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .main *, .main *::before, .main *::after { transition-duration: 0s !important; animation-duration: 0s !important; }
+}

@@ -4,7 +4,8 @@
     $(function () {
         var $gallery = $('#portfolio .sort-destination');
         var pending = false;
-        $('#portfolio .sort-source').themePluginSort();
+        // Section links use the URL hash. Keep gallery filters independent of it.
+        $('#portfolio .sort-source').themePluginSort({ useHash: false });
         // The image viewer must also work on touch and keyboard activation.
         $gallery.themePluginLightbox(theme.fn.getOptions($gallery.data('plugin-options')));
         function refreshGallery() {

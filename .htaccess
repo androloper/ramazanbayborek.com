@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Redirect explicit homepage filenames, not internal DirectoryIndex lookups.
+RewriteCond %{THE_REQUEST} "\s/+index\.html(?:[?\s])" [NC]
+RewriteRule ^index\.html$ https://ramazanbayborek.com/ [R=301,L,NC]
+
+# Keep asset and page paths while enforcing HTTPS and the canonical hostname.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^ramazanbayborek\.com$ [NC]
+RewriteRule ^ https://ramazanbayborek.com%{REQUEST_URI} [R=301,L,NE]
