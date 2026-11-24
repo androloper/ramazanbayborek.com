@@ -10394,7 +10394,22 @@ document.addEventListener("DOMContentLoaded", function () {
         return m + 1; // LinkedIn
     }
 
+    const dateLocale = document.documentElement.lang;
+
+    function formatLocalizedDuration(m, style) {
+        const years = Math.floor(m / 12);
+        const months = m % 12;
+        const unit = (value, name) => new Intl.NumberFormat(dateLocale, {
+            style: "unit", unit: name, unitDisplay: style
+        }).format(value);
+        const parts = [];
+        if (years > 0) parts.push(unit(years, "year"));
+        if (months > 0 || !parts.length) parts.push(unit(months, "month"));
+        return parts.join(" ");
+    }
+
     function formatLong(m) {
+        if (dateLocale !== "en") return "(" + formatLocalizedDuration(m, "long") + ")";
         const y = Math.floor(m / 12);
         const mo = m % 12;
 
@@ -10405,15 +10420,22 @@ document.addEventListener("DOMContentLoaded", function () {
         return t ? "(" + t + ")" : "";
     }
 
+    const shortDurationUnits = {
+        en: ["y", "m"],
+        tr: ["y", "a"],
+        de: ["J", "M"],
+        es: ["a", "m"],
+        it: ["a", "m"]
+    };
+
     function formatShort(m) {
-        const y = Math.floor(m / 12);
-        const mo = m % 12;
-
-        let t = "";
-        if (y > 0) t += y + "y";
-        if (mo > 0) t += (t ? " " : "") + mo + "m";
-
-        return t || "0m";
+        const [yearUnit, monthUnit] = shortDurationUnits[dateLocale] || shortDurationUnits.en;
+        const years = Math.floor(m / 12);
+        const months = m % 12;
+        const parts = [];
+        if (years > 0) parts.push(years + yearUnit);
+        if (months > 0 || !parts.length) parts.push(months + monthUnit);
+        return parts.join(" ");
     }
 
     // 🔥 TIMELINE (dokunma buna)
@@ -10424,8 +10446,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!fromEl || !toEl) return;
 
-        const from = parseDate(fromEl.innerText);
-        const to = parseDate(toEl.innerText);
+        const from = parseDate(fromEl.dataset.date || fromEl.innerText);
+        const to = parseDate(toEl.dataset.date || toEl.innerText);
 
         const total = calcMonths(from, to);
 

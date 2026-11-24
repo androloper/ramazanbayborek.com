@@ -4,6 +4,10 @@ RewriteEngine On
 RewriteCond %{THE_REQUEST} "\s/+index\.html(?:[?\s])" [NC]
 RewriteRule ^index\.html$ https://ramazanbayborek.com/ [R=301,L,NC]
 
+# Normalize localized homepages to directory URLs.
+RewriteCond %{THE_REQUEST} "\s/+(tr|de|es|it)(?:/index\.html)?(?:[?\s])" [NC]
+RewriteRule ^(tr|de|es|it)(?:/index\.html)?$ https://ramazanbayborek.com/$1/ [R=301,L]
+
 # Keep asset and page paths while enforcing HTTPS and the canonical hostname.
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} !^ramazanbayborek\.com$ [NC]
