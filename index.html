@@ -125,8 +125,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4 position-relative custom-sm-margin-bottom-1">
-                            <img src="img/avatars/1.jpg" width="831" height="1096" fetchpriority="high"
-                                 class="img-fluid custom-border custom-image-position-2 custom-box-shadow-4" alt="Ramazan Baybörek"/>
+                            <picture>
+                                <source media="(max-width: 991px)" type="image/webp"
+                                        srcset="img/optimized/portrait-220.webp 220w, img/optimized/portrait-440.webp 440w, img/optimized/portrait-660.webp 660w" sizes="220px">
+                                <img src="img/avatars/1.jpg" width="831" height="1096" fetchpriority="high"
+                                     class="img-fluid custom-border custom-image-position-2 custom-box-shadow-4" alt="Ramazan Baybörek"/>
+                            </picture>
                         </div>
                         <div class="col-lg-8 col-xl-8">
                             <h1 class="text-color-primary custom-font-size-1">Ramazan BAYBÖREK</h1>
