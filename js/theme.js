@@ -8321,10 +8321,17 @@ if( $('[data-copy-to-clipboard]').length ) {
 					var padding = parseInt( self.options.wrapper.children().css('padding-left') ) + parseInt( self.options.wrapper.children().css('padding-right') );
 				}
 
-				$destination.waitForImages(function() {
+				// Lazy images need a layout before they can enter the viewport.
+				// Their width/height attributes reserve space while they load.
+				var initializeSort = function() {
 					$destination.isotope(self.options);
 					self.events();
-				});
+				};
+				if ($destination.find('img[loading="lazy"]').length) {
+					initializeSort();
+				} else {
+					$destination.waitForImages(initializeSort);
+				}
 
 
 				setTimeout(function() {
